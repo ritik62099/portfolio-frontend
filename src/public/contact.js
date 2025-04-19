@@ -1,42 +1,41 @@
+
 import React, { useState } from "react";
 import "../components/style/contact.css";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ 
-    name: "", 
-    email: "", 
-    message: "" 
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // Clear error when user types
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setLoading(true);
+    setSuccess("");
+
     try {
-      const response = await fetch("https://portfolio-frontend-mey4.vercel.app/api/contact", {
+      // const response = await fetch("http://localhost:5000/api/contact", {
+        const response = await fetch("https://portfolio-frontend-mey4.vercel.app/api/contact", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-        credentials: "include"
       });
-  
-      if (!response.ok) throw new Error("Request failed");
+
       const data = await response.json();
-      setSuccess("Message sent successfully!");
-      
+      if (response.ok) {
+        setSuccess("Message Sent Successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSuccess("Error: " + data.error);
+      }
     } catch (error) {
-      setError("Failed to send message. Please try again later.");
+      setSuccess("Something went wrong. Please try again.");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -44,10 +43,7 @@ export default function Contact() {
       <div className="contact-content">
         <h1>Contact Me</h1>
         <p>Have a project in mind? Let's talk!</p>
-        
-        {success && <div className="alert success">{success}</div>}
-        {error && <div className="alert error">{error}</div>}
-        
+        {success && <p className="message">{success}</p>}
         <form onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
@@ -56,7 +52,6 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            disabled={loading}
           />
           <input
             type="email"
@@ -65,7 +60,6 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            disabled={loading}
           />
           <textarea
             name="message"
@@ -74,13 +68,8 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             required
-            disabled={loading}
           ></textarea>
-          <button 
-            type="submit" 
-            disabled={loading}
-            aria-busy={loading}
-          >
+          <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>

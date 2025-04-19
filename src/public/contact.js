@@ -18,10 +18,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setSuccess("");
-    setError("");
-
+    
     try {
       const response = await fetch("https://portfolio-frontend-mey4.vercel.app/api/contact", {
         method: "POST",
@@ -30,23 +27,15 @@ export default function Contact() {
           "Accept": "application/json"
         },
         body: JSON.stringify(formData),
-        credentials: "same-origin" // Changed from 'include' for security
+        credentials: "include"
       });
-
+  
+      if (!response.ok) throw new Error("Request failed");
       const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-      
       setSuccess("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
       
     } catch (error) {
-      console.error("API Error:", error);
-      setError(error.message || "Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
+      setError("Failed to send message. Please try again later.");
     }
   };
 

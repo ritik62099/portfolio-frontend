@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../components/style/about.css"; // Import the CSS file
 
-
+import Ritik from '../images/ritik.jpg'
 
 export default function About() {
   const [ setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function About() {
     <div className="about-container">
       {/* Left Side - Image */}
       <div className="about-image">
-        <img src="/images/profile.jpg" alt="Ritik Kumar" />
+        <img src={Ritik} alt="Ritik Kumar" />
       </div>
 
       {/* Right Side - Content */}

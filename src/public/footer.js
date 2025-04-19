@@ -24,9 +24,10 @@ export default function Footer() {
         <div className="footer-section">
           <h3>Follow Me</h3>
           <div className="social-icons">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.linkedin.com/in/ritik-kumar-a2313b252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/ritik62099" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://x.com/RitikKumar88712?t=yVujw3tTyV-NtM2Tlv3BLw&s=09" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/aryen841207?igsh=MXRpcHhqdXU2b3YxeA==" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
       </div>

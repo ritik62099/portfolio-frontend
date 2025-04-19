@@ -14,26 +14,31 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setSuccess("");
-
+  
     try {
-      // const response = await fetch("http://localhost:5000/api/contact", {
-        const response = await fetch("https://portfolio-frontend-mey4.vercel.app/api/contact", {
+      const response = await fetch("https://portfolio-frontend-mey4.vercel.app/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          // Add any other required headers here
+        },
         body: JSON.stringify(formData),
+        mode: 'cors', // Explicitly set CORS mode
+        credentials: 'include' // If using cookies/sessions
       });
-
+  
       const data = await response.json();
       if (response.ok) {
         setSuccess("Message Sent Successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setSuccess("Error: " + data.error);
+        setSuccess("Error: " + (data.error || "Failed to send message"));
       }
     } catch (error) {
+      console.error("Fetch error:", error);
       setSuccess("Something went wrong. Please try again.");
     }
-
+  
     setLoading(false);
   };
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../components/style/main.css";
-import Ritik from '../images/ritik.jpg'
+import Ritik from '../images/ritik2.png';
 export default function Main() {
   return (
     <>

@@ -10,20 +10,67 @@ import App from '../images/app-image.jpg';
 
 const services = [
   {
-    title: "Web Development",
-    description: "Creating modern and responsive websites.",
-    extraDescription:
-      "I specialize in building fast, SEO-friendly, and scalable websites using the latest technologies like React, Next.js, and more.",
+    title: "Custom Website Development",
+    description: "Building unique, fully customized websites tailored to your needs.",
+    extraDescription: "No templates, just clean code and responsive design.",
     image: Web,
   },
   {
-    title: "App Development",
-    description: "Building high-performance mobile applications.",
-    extraDescription:
-      "From Android to iOS, I develop apps with intuitive UI and great performance using React Native and Flutter.",
+    title: "Responsive Design",
+    description: "Creating websites and apps that look great on any device.",
+    extraDescription: "Mobile-friendly, tablet-compatible, and desktop-optimized.",
+    image: Web,
+  },
+  {
+    title: "Frontend Development",
+    description: "Expert development using React.js, Next.js, and modern UI libraries.",
+    extraDescription: "Fast, scalable frontends with clean user interfaces.",
+    image: Web,
+  },
+  {
+    title: "Backend Development",
+    description: "Building secure and scalable backend systems with Node.js, Express, and more.",
+    extraDescription: "Database integration with MongoDB, Firebase, and others.",
+    image: Web,
+  },
+  {
+    title: "Mobile App Development",
+    description: "Creating high-performance mobile apps for both Android and iOS.",
+    extraDescription: "Using React Native and Flutter for cross-platform development.",
     image: App,
   },
+  {
+    title: "E-Commerce Solutions",
+    description: "Building feature-rich e-commerce websites and apps.",
+    extraDescription: "Product listings, cart, secure payments, and order tracking.",
+    image: Web,
+  },
+  {
+    title: "UI/UX Design for Apps",
+    description: "Crafting intuitive and beautiful mobile app designs.",
+    extraDescription: "Using tools like Figma and Adobe XD for pixel-perfect designs.",
+    image: App,
+  },
+  {
+    title: "API Integration for Apps & Websites",
+    description: "Connecting your app or website to external services.",
+    extraDescription: "Payment gateways, maps, weather data, and more.",
+    image: Web,
+  },
+  {
+    title: "App Deployment & Maintenance",
+    description: "Deploying apps to Google Play and Apple App Store.",
+    extraDescription: "Ongoing maintenance, updates, and bug fixes after launch.",
+    image: App,
+  },
+  {
+    title: "SEO Optimization",
+    description: "Making sure your website or app ranks well on search engines.",
+    extraDescription: "Improved visibility with SEO-friendly design and content.",
+    image: Web,
+  },
 ];
+
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);

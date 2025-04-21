@@ -61,7 +61,7 @@
     .about-image {
       order: -1;
       margin-bottom: 20px;
-      border: 2px solid blue;
+      /* border: 2px solid blue; */
       margin-top: 70px;
     }
     
@@ -70,9 +70,10 @@
     }
     
     .about-image img {
-      border: 2px solid red;
+      /* border: 2px solid red; */
       max-width: 60%;
       margin-top: 0;
+    
     }
   }
   

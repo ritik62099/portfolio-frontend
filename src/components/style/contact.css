@@ -6,6 +6,7 @@
     align-items: center;
     height: 100vh;
     padding: 20px;
+    /* border: 2px solid red; */
   }
   
   .contact-content {
@@ -89,3 +90,8 @@
     text-decoration: underline;
   }
   
+  @media (max-width: 768px) {
+    .contact-container{
+      height: 80vh;
+    }
+  }

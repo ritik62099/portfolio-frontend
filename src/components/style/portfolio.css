@@ -1,107 +1,117 @@
-/* Portfolio Page Styling */
 .portfolio-container {
-    background: linear-gradient(135deg, #f5fcff, #dfefff); /* Light Blue Gradient */
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .portfolio-title {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  /* Slider Custom Styles */
-  .slick-slide {
-    display: flex;
-    justify-content: center;
-  }
-  
+  background: linear-gradient(135deg, #f5fcff, #dfefff);
+  padding: 50px;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  max-width: 350px;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Modal styles */
+.project-details {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.project-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.visit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.visit-btn:hover {
+  background-color: darkblue;
+}
+
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-icon:hover {
+  color: darkred;
+}
+
+/* Background blur */
+.blur-active {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Lock scroll on modal open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .portfolio-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    max-width: 350px;
+    max-width: 90%;
   }
-  
-  .portfolio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .portfolio-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  /* Project Details Popup */
+
   .project-details {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+    padding: 20px;
   }
-  
-  .project-detail-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 15px;
+
+  .close-icon {
+    font-size: 32px;
   }
-  
-  .visit-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    transition: background 0.3s;
-  }
-  
-  .visit-btn:hover {
-    background-color: darkblue;
-  }
-  
-  .close-btn {
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s;
-  }
-  
-  .close-btn:hover {
-    background-color: darkred;
-  }
-  
-  /* Background Blur Effect When Modal is Open */
-  .blur-active {
-    filter: blur(5px);
-    pointer-events: none;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .portfolio-card {
-      max-width: 300px;
-    }
-  }
-  
+}

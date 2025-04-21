@@ -105,6 +105,7 @@ body.modal-open {
 @media (max-width: 768px) {
   .portfolio-card {
     max-width: 90%;
+    
   }
 
   .project-details {

@@ -89,6 +89,8 @@
     }
     .mobile-menu {
       display: block;
+     
+      text-align: center;
     }
     .contact-btn {
       display: none;

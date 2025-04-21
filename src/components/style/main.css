@@ -56,12 +56,21 @@
       flex-direction: column;
       text-align: center;
     }
+  
+    /* Reorder image above content on mobile */
+    .about-image {
+      order: -1;
+      margin-bottom: 20px;
+    }
+  
     .about-content {
       max-width: 100%;
     }
+  
     .about-image img {
       max-width: 60%;
-      margin-top: 20px;
+      margin-top: 0;
     }
   }
+  
   

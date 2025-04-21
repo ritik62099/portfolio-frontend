@@ -5,33 +5,35 @@ import "../components/style/portfolio.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import Web from '../images/web-image.jpg';
+
 const projects = [
   {
     title: "E-Commerce Website",
     description: "A full-featured e-commerce platform with secure payment integration.",
     details: "Built using React, Node.js, and MongoDB. Includes product listings, cart, and admin panel.",
-    image: "/images/ecommerce.jpg",
+    image: Web,
     link: "https://your-ecommerce-site.com",
   },
   {
     title: "Portfolio Website",
     description: "A personal portfolio website showcasing my work and skills.",
     details: "Created using React and styled-components for a modern, responsive UI.",
-    image: "/images/portfolio.jpg",
+    image: Web,
     link: "https://your-portfolio-site.com",
   },
   {
     title: "Social Media App",
     description: "A social networking app with user authentication and messaging.",
     details: "Developed using React Native and Firebase for real-time chat and user posts.",
-    image: "/images/social-app.jpg",
+    image: Web,
     link: "https://your-social-media-app.com",
   },
   {
     title: "Restaurant App",
     description: "An online food ordering system with table reservations.",
     details: "Built with Flutter and Firebase, including real-time order tracking.",
-    image: "/images/restaurant.jpg",
+    image: Web,
     link: "https://your-restaurant-app.com",
   },
 ];

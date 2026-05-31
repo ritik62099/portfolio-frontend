@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/portfolio-frontend/static/css/main.212703a0.css",
+    "main.js": "/portfolio-frontend/static/js/main.b9886563.js",
+    "static/js/453.8ab44547.chunk.js": "/portfolio-frontend/static/js/453.8ab44547.chunk.js",
+    "static/media/ritik2.png": "/portfolio-frontend/static/media/ritik2.fdb0134d3cec00341fed.png",
+    "static/media/app-image.jpg": "/portfolio-frontend/static/media/app-image.56d767d9ed3263016cfd.jpg",
+    "static/media/personalportfolio.png": "/portfolio-frontend/static/media/personalportfolio.efb3bd2bfd5490dbf470.png",
+    "static/media/ritik.jpg": "/portfolio-frontend/static/media/ritik.31b2d1b32ff390196561.jpg",
+    "static/media/school.png": "/portfolio-frontend/static/media/school.fb893246beb04971927b.png",
+    "static/media/RestaurantApp.jpg": "/portfolio-frontend/static/media/RestaurantApp.ef875c12f4d0f1a11264.jpg",
+    "static/media/Exam.png": "/portfolio-frontend/static/media/Exam.909888439cbec73fac53.png",
+    "static/media/fa-solid-900.woff2": "/portfolio-frontend/static/media/fa-solid-900.ce9a3fa740bd60b4ac3b.woff2",
+    "static/media/fa-brands-400.woff2": "/portfolio-frontend/static/media/fa-brands-400.f276979f97f1cf375d23.woff2",
+    "static/media/APIIntegration.jpg": "/portfolio-frontend/static/media/APIIntegration.76acf20b38fac567f107.jpg",
+    "static/media/MobileApp.jpg": "/portfolio-frontend/static/media/MobileApp.78eec7b2abf451352ee2.jpg",
+    "static/media/Responsive.jpg": "/portfolio-frontend/static/media/Responsive.304ced22e973b391d061.jpg",
+    "static/media/CustomWebsite.jpg": "/portfolio-frontend/static/media/CustomWebsite.a6e40d20c07055c59b83.jpg",
+    "static/media/fa-regular-400.woff2": "/portfolio-frontend/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
+    "static/media/fa-v4compatibility.woff2": "/portfolio-frontend/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
+    "index.html": "/portfolio-frontend/index.html",
+    "main.212703a0.css.map": "/portfolio-frontend/static/css/main.212703a0.css.map",
+    "main.b9886563.js.map": "/portfolio-frontend/static/js/main.b9886563.js.map",
+    "453.8ab44547.chunk.js.map": "/portfolio-frontend/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.212703a0.css",
+    "static/js/main.b9886563.js"
+  ]
+}

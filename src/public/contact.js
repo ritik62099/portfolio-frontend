@@ -1,81 +1,36 @@
-
-import React, { useState } from "react";
+import React from "react";
 import "../components/style/contact.css";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const openWhatsApp = () => {
+    const phoneNumber = "916209968385"; // Apna number
+    const message =
+      "Hi Ritik, I visited your portfolio and would like to discuss a project.";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setSuccess("");
-
-    try {
-      // const response = await fetch("http://localhost:5000/api/contact", {
-        const response = await fetch("https://portfolio-backend-eight-tan.vercel.app/api/contact", {
-          
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        
-
-      const data = await response.json();
-      if (response.ok) {
-        setSuccess("Message Sent Successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setSuccess("Error: " + data.error);
-      }
-    } catch (error) {
-      setSuccess("Something went wrong. Please try again.");
-    }
-
-    setLoading(false);
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   return (
-    <div className="contact-container">
+    <section id="contact" className="contact-container">
       <div className="contact-content">
-        <h1>Contact Me</h1>
-        <p>Have a project in mind? Let's talk!</p>
-        {success && <p className="message">{success}</p>}
-        <form onSubmit={handleSubmit} className="contact-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-          <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+        <h1>Let's Work Together</h1>
+
+        <p>
+          Have a website, app, or video editing project in mind?
+          Let's discuss it on WhatsApp.
+        </p>
+
+        <button
+          className="whatsapp-btn"
+          onClick={openWhatsApp}
+        >
+          Chat on WhatsApp
+        </button>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,96 +1,123 @@
-import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import { AiOutlineClose } from "react-icons/ai"; // Close icon
+import React, { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import "../components/style/portfolio.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-import ECommerceWebsite from '../images/E-CommerceWebsite.jpg';
-import Portfolios from '../images/Portfolio.jpg';
-import SocialMediaApp from '../images/SocialMediaApp.jpg';
-import RestaurantApp from '../images/RestaurantApp.jpg';
-
+import PortfolioImg from "../images/personalportfolio.png";
+import EcommerceImg from "../images/Exam.png";
+import AppImg from "../images/school.png";
 
 const projects = [
   {
-    title: "E-Commerce Website",
-    description: "A full-featured e-commerce platform with secure payment integration.",
-    details: "Built using React, Node.js, and MongoDB. Includes product listings, cart, and admin panel.",
-    image: ECommerceWebsite,
-    link: "https://your-ecommerce-site.com",
+    title: "Personal Portfolio Website",
+    description:
+      "A modern responsive portfolio built using React.",
+    details:
+      "Designed and developed to showcase my skills, services, and projects with a clean UI and responsive experience.",
+    image: PortfolioImg,
+    tech: "React • CSS • JavaScript",
+    github: "#",
+    live: "#",
   },
+
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio website showcasing my work and skills.",
-    details: "Created using React and styled-components for a modern, responsive UI.",
-    image: Portfolios,
-    link: "https://your-portfolio-site.com",
+    title: "Exam Management System",
+    description:
+      "A web application for managing exams and student results.",
+    details:
+      "Built as a learning project using modern frontend and backend technologies.",
+    image: EcommerceImg,
+    tech: "React • Node.js • MongoDB",
+    github: "#",
+    live: "#",
   },
+
   {
-    title: "Social Media App",
-    description: "A social networking app with user authentication and messaging.",
-    details: "Developed using React Native and Firebase for real-time chat and user posts.",
-    image: SocialMediaApp,
-    link: "https://your-social-media-app.com",
-  },
-  {
-    title: "Restaurant App",
-    description: "An online food ordering system with table reservations.",
-    details: "Built with Flutter and Firebase, including real-time order tracking.",
-    image: RestaurantApp,
-    link: "https://your-restaurant-app.com",
+    title: "School Management System",
+    description:
+      "A web application for managing school operations and student records.",
+    details:
+      "Built as a learning project using modern frontend and backend technologies.",
+    image: AppImg,
+    tech: "React • Node.js • MongoDB",
+    github: "#",
+    live: "#",
   },
 ];
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  useEffect(() => {
-    if (selectedProject) {
-      document.body.classList.add("modal-open");
-    } else {
-      document.body.classList.remove("modal-open");
-    }
-  }, [selectedProject]);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-    ],
-  };
-
   return (
-    <div id="portfolio" className="services-wrapper">
-      <div className={`portfolio-container ${selectedProject ? "blur-active" : ""}`}>
-        <h1 className="portfolio-title">My Projects</h1>
-        <Slider {...settings}>
-          {projects.map((project, index) => (
-            <div key={index} className="portfolio-card" onClick={() => setSelectedProject(project)}>
-              <img src={project.image} alt={project.title} className="portfolio-image" />
-              <h2>{project.title}</h2>
+    <section id="portfolio" className="portfolio-section">
+
+      <div className="portfolio-header">
+        <span>MY WORK</span>
+
+        <h1>Featured Projects</h1>
+
+        <p>
+          Some projects I have built while learning and improving
+          my development skills.
+        </p>
+      </div>
+
+      <div className="portfolio-grid">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="project-card"
+            onClick={() => setSelectedProject(project)}
+          >
+            <img src={project.image} alt={project.title} />
+
+            <div className="project-content">
+              <h3>{project.title}</h3>
+
               <p>{project.description}</p>
+
+              <span>{project.tech}</span>
+
+              <button>View Details</button>
             </div>
-          ))}
-        </Slider>
+          </div>
+        ))}
       </div>
 
       {selectedProject && (
-        <div className="project-details">
-          <AiOutlineClose className="close-icon" onClick={() => setSelectedProject(null)} />
-          <h2>{selectedProject.title}</h2>
-          <p>{selectedProject.details}</p>
-          <img src={selectedProject.image} alt={selectedProject.title} className="project-detail-image" />
-          <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="visit-btn">
-            Visit Project
-          </a>
+        <div
+          className="modal-overlay"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="project-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <AiOutlineClose
+              className="close-btn"
+              onClick={() => setSelectedProject(null)}
+            />
+
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+            />
+
+            <h2>{selectedProject.title}</h2>
+
+            <p>{selectedProject.details}</p>
+
+            <div className="project-buttons">
+              <a href={selectedProject.github}>
+                GitHub
+              </a>
+
+              <a href={selectedProject.live}>
+                Live Demo
+              </a>
+            </div>
+          </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

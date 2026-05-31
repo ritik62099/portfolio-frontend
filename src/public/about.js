@@ -1,75 +1,72 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import "../components/style/about.css"; // Import the CSS file
-
-import Ritik from '../images/ritik.jpg'
+import React from "react";
+import "../components/style/about.css";
+import Ritik from "../images/ritik.jpg";
 
 export default function About() {
-  const [ setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  // Scroll and Navigate function
-  const handleScroll = (id, path) => {
-    if (location.pathname === path) {
-      // Same page scroll
-      scrollToSection(id);
-    } else {
-      // Navigate to another page and then scroll
-      navigate(path);
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 500); // Delay for smooth transition
-    }
-    setIsOpen(false); // Close mobile menu
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
-  // Scroll Helper Function
-    const scrollToSection = (id) => {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  
-    // Scroll to section after page refresh
-    useEffect(() => {
-      const hash = location.hash.replace("#", "");
-      if (hash) {
-        setTimeout(() => {
-          scrollToSection(hash);
-        }, 500);
-      }
-    }, [location]);
-  
   return (
-    <>
-    <div id="about" className="services-wrapper">
-    <div className="about-container">
-      {/* Left Side - Image */}
+    <section id="about" className="about-section">
+
       <div className="about-image">
         <img src={Ritik} alt="Ritik Kumar" />
       </div>
 
-      {/* Right Side - Content */}
       <div className="about-content">
-        <h1>About Me</h1>
-        <h2>Hey, I'm <span className="highlight">Ritik Kumar</span></h2>
+
+        <span className="about-tag">
+          ABOUT ME
+        </span>
+
+        <h1>
+          Building Digital Experiences
+          That Make An Impact
+        </h1>
+
         <p>
-          I am a passionate <span className="highlight">Web & App Developer</span> 
-          with expertise in front-end and back-end technologies.
-          I create modern, high-performance digital solutions that enhance user experiences.
+          Hi, I'm <strong>Ritik Kumar</strong>, a passionate
+          Full Stack Developer focused on creating modern websites,
+          mobile applications, and digital experiences that are fast,
+          scalable, and user-friendly.
         </p>
+
         <p>
-          With a strong foundation in frameworks like <span className="highlight">React, Next.js, and Node.js</span>, 
-          I help businesses bring their ideas to life through scalable and efficient solutions.
+          I work with technologies like React, Node.js, Express,
+          MongoDB, and React Native to transform ideas into real-world
+          products that help businesses grow online.
         </p>
-        
-        <button className="about-btn" onClick={() => handleScroll("contact", "/contact")}>Contact Me</button>
+
+        <div className="about-stats">
+
+          <div className="stat-box">
+            <h2>10+</h2>
+            <span>Projects</span>
+          </div>
+
+          <div className="stat-box">
+            <h2>100%</h2>
+            <span>Dedication</span>
+          </div>
+
+          <div className="stat-box">
+            <h2>24/7</h2>
+            <span>Support</span>
+          </div>
+
+        </div>
+
+        <button
+          className="about-btn"
+          onClick={scrollToContact}
+        >
+          Let's Work Together
+        </button>
+
       </div>
-    </div>
-    </div>
-    
-    </>
+    </section>
   );
 }
